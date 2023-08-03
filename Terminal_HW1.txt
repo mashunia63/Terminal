@@ -1,0 +1,94 @@
+1) Посмотреть где я —- pwd
+2) Создать папку —- mkdir HW1
+3) Зайти в папку —- cd HW1
+4) Создать 3 папки —- mkdir f1 f2 f3
+5) Зайти в любую папку —- cd f2
+6) Создать 5 файлов (3 txt, 2 json) —- touch file1.txt file2.txt file3.txt file4.json file5.json
+7) Создать 3 папки —- mkdir F4 F5 F6
+8) Вывести список содержимого папки —- ls -la
+9) + Открыть любой txt файл —- cat > file1.txt
+10) + Написать туда что-нибудь, любой текст.
+row1
+row2
+row3
+11) + Сохранить и выйти —- ^c
+12) Выйти из папки на уровень выше —- cd ..
+
+—-----
+
+13) Переместить любые 2 файла, которые вы создали, в любую другую папку.
+mv f2/file1.txt f3/file1.txt
+mv f2/file2.txt f3/file2.txt
+
+14) Cкопировать любые 2 файла, которые вы создали, в любую другую папку.
+cp f2/file4.json f3/file4.json
+cp f2/file5.json f3/file5.json
+
+15) Найти файл по имени —- find <где искать> <опции>
+find . -name file1.txt
+
+16) Просмотреть содержимое в реальном времени (команда grep) изучите как она работает  
+tail -f file1.txt | grep row4   (изменения по row4) 
+grep ".*" file1.txt    (все содержимое)
+cat file1.txt | grep row4    (поиск по row4)
+grep row4 file1.txt     (поиск по row4)
+
+17) Вывести несколько первых строк из текстового файла - head -n
+head -3 file1.txt
+
+18) Вывести несколько последних строк из текстового файла - tail -n
+tail -2 file1.txt
+
+19) Просмотреть содержимое длинного файла (команда less) изучите как она работает.
+less -N file1.txt
+Выход - q
+
+20) Вывести дату и время - date
+
+=================
+
+Задание *
+
+1) Отправить http запрос на сервер. http://162.55.220.72:5006/terminal-hw-request
+
+curl http://162.55.220.72:5006/terminal-hw-request
+
+1.1) Task_1
+
+curl “http://162.55.220.72:5005/get_method?name=MMM&age=00”
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+vim terminal_auth.sh
+i - режим ввода
+
+#!/bin/bash
+echo ---- Где я? ----
+pwd
+echo ---- Введите имя для новой папки ----
+read name
+echo ---- Создание папки с именем $name ----
+mkdir $name
+echo ---- Переход в папку с именем $name ----
+cd $name
+echo ---- Создание папок folder1 folder2 folder3 ----
+mkdir folder1 folder2 folder3
+echo ---- Переход в папку с именем folder1 ----
+cd folder1
+echo ---- Создание 5 файлов (3 txt, 2 json) ----
+touch f1.txt f2.txt f3.txt f4.json f5.json
+echo ---- Создание 3х папок ----
+mkdir folder4 folder5 folder6
+echo ---- Вывод содержимого ----
+ls -la
+echo ---- Перемещение файла f1.txt из текущей папки в inner folder6 ----
+mv f1.txt folder6/f1.txt
+echo ---- Перемещение файла f4.txt из текущей папки в inner folder6 ----
+mv f4.json folder6/f4.json
+
+(esc):wq! - Выход из редактирования
+
+Запуск:
+
+chmod u+x terminal_auth.sh    - разрешить системе исполнять скрипт 
+./ terminal_auth.sh или bash terminal_auth.sh
