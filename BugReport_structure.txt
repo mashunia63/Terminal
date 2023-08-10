@@ -1,0 +1,17 @@
+Bug Report Structure
+
+Required elements:
+1. ID / Name
+2. Summary / Description - What? Where? When? 
+3. Name of project
+4. Environment
+5. Severity
+6. Priority
+7. Status of bug
+8. Steps to reproduce
+9. Expected result vs. Actual results 
+10. Visual proofs
+11. Source URL
+12. Reporter
+13. Developer
+
