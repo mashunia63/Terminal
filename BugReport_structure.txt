@@ -9,7 +9,7 @@ Required elements:
 6. Priority
 7. Status of bug
 8. Steps to reproduce
-9. Expected result vs. Actual results 
+9. Expected result vs. Actual result 
 10. Visual proofs
 11. Source URL
 12. Reporter
