@@ -1,0 +1,55 @@
+GitHub. HW_2
+
+Посмотреть существующие ветки
+git branch
+
+1. На локальном репозитории сделать ветки для: 
+git branch name
+- Postman 
+- Jmeter
+- CheckLists
+- Bag Reports - ругается на Reports  - можно ли без пробела? Bug?
+- SQL
+- Charles
+- Mobile testing - ругается на Testing
+
+2. Запушить все ветки на внешний репозиторий git push origin --all
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта 
+git checkout BugReports
+vim BugReport_structure.txt
+
+4. Запушить структуру багрепорта на внешний репозиторий 
+git add . 
+git commit -m "add Bug report structure"
+git push
+
+5. Вмержить ветку Bag Reports в Main 
+git checkout main
+git merge BugReports
+
+6. Запушить main на внешний репозиторий. 
+git push
+
+7. В ветке CheckLists набросать структуру чек листа.
+git checkout CheckLists
+vim CheckList_structure.txt
+
+8. Запушить структуру на внешний репозиторий
+git config --global --add --bool push.autoSetupRemote true
+git add . 
+git commit -m “add Check List structure “
+git push
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+Compare and pull request
+Merge Pull Request
+Confirm Merge
+
+10. Синхронизировать Внешнюю и Локальную ветки Main
+git checkout main
+git pull
+
+
+
+git branch -D apple_pay - создание без перехода
+git push -u origin Если сделать git push ветки без ключа -u, Git не свяжет локальную ветку с веткой удалённого репозитория. Последующая операция git pull в этой ветке будет неудачной, так как Git не будет знать, из какой удалённой ветки подтягивать изменения, это придётся указать явно при помощи команды git branch --set-upstream-to=origin/master. Смысл использовать ключ -u есть только при пуше новых веток, для существующих (связанных с удалёнными) веток каждый раз перезаписывать связку необязательно.
