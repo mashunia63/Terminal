@@ -1,0 +1,14 @@
+Check List structure:
+
+The Testing Checklist is a document that describes which features should be tested. Testing Checklists may have different levels of detail.
+
+A Checklist is a catalog of items/tasks that are recorded for tracking. This list could be either ordered in a sequence or could be haphazard.
+
+The Testing Checklist should include:
+
+1. General information about project, author, date, version and etc.
+2. a detailed list of tests
+3. verification status
+4. verification results
+
+
