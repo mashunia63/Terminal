@@ -1,4 +1,0 @@
-Apple_pay
-row 1
-row 2
-row 333
