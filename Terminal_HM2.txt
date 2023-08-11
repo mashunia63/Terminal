@@ -21,10 +21,13 @@ cat > tf_2.txt
 7. Зайти в папку inner_dir_1 - cd inner_dir_1
 8. Через cat сделать текстовый файл tf_3.txt  c любыми строками - cat > tf_3.txt
 
-9. Через cat добавить в текстовый файл tf_3.txt строку “the second 2”   
-10. Через cat добавить в текстовый файл tf_3.txt строку “the sec 2”
+9. Через cat добавить в текстовый файл tf_3.txt строку “the second 2” 
 cat >> tf_3.txt
 the second 2
+^c
+
+10. Через cat добавить в текстовый файл tf_3.txt строку “the sec 2”
+cat >> tf_3.txt
 the sec 2
 ^c
 
@@ -129,7 +132,7 @@ grep: inner_dir_1: Is a directory
 tf_2.txt:- the second 2
 tf_2.txt:the seConD 2
 
-29. Найти строки в файлах где есть комбинация букв “second” во всех папках ниже уровнем - grep -r "second" * - ??
+29. Найти строки в файлах где есть комбинация букв “second” во всех папках ниже уровнем - grep -r "second" * 
 inner_dir_1/tf_3.txt:the second 2
 tf_2.txt:- the second 2
 
@@ -142,20 +145,17 @@ tf_2.txt
 grep -v -r second *
 
 32. Найти только название и путь к файлам где нет комбинации “second” 
-grep -l -v -r second *
-inner_dir_1/tf_3.txt
-inner_dir_1/tF_5.txt
-tf_2.txt
+find . -type f -exec grep -L "second" {} \;
 
 33. Вывести в терминал 4 последних строк любого текстового файла
-tail -4 tf_2.txt
+tail -4 tf_2.txt или tail -n 4 tf_2.txt
 - the second 2
 - the third 3
 the sec 3
 the seConD 2
 
 34. Вывести в терминал 4 первые строки любого текстового файла.
-head -4 tf_2.txt
+head -4 tf_2.txt или head -n 4 tf_2.txt
 - the first 1
 - the second 2
 - the third 3
@@ -168,8 +168,6 @@ mkdir f_35 | echo Hello! > f_35/text_hi.txt - в папке
 
 36. Команда в одну строку. Переместить в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
 grep -r -w -l "sec" | xargs -I {} mv {} f_35
-
-
 
 37. Команда в одну строку. Скопировать в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
 grep -r -w -l "sec" | xargs -I {} cp {} f_35
