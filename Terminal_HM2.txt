@@ -105,7 +105,7 @@ cat > ./inner_dir_1/tf_4.txt
 : >  ./inner_dir_1/tf_4.txt
 
  21. Найти путь к файлам у которых есть  “tf” в названии. 
-find . -name "tf*"
+find . -name "tf"
 ./tf_1.txt
 ./tf_2.txt
 ./inner_dir_1/tf_3.txt
@@ -113,7 +113,7 @@ find . -name "tf*"
 
 
  22. Найти путь к файлам у которых есть  “tf” в названии и буквы в любом регистре.
-find . -iname "tf*"
+find . -iname "tf"
 ./tf_1.txt
 ./tf_2.txt
 ./inner_dir_1/tf_3.txt
@@ -190,8 +190,6 @@ the sec 3
 
 35. Команда в одну строку. Создать папку и создать текстовый файл с содержимым.
 mkdir f_35 | echo Hello! > text_hi.txt
-или
-mkdir f_35 | echo Hello! > f_35/text_hi.txt - в папке
 
 36. Команда в одну строку. Переместить в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
 grep -r -w -l "sec" | xargs -I {} mv {} f_35
