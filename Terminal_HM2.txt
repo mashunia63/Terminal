@@ -132,7 +132,12 @@ grep: inner_dir_1: Is a directory
 tf_2.txt:- the second 2
 tf_2.txt:the seConD 2
 
-29. Найти строки в файлах где есть комбинация букв “second” во всех папках ниже уровнем - grep -r "second" * 
+29. Найти строки в файлах где есть комбинация букв “second” во всех папках ниже уровнем 
+
+grep -r "second" ./inner_dir_1 - в конкретной подпапке
+./inner_dir_1/tf_3.txt:the second 2
+
+grep -r "second" * - в папках ниже и в текущей
 inner_dir_1/tf_3.txt:the second 2
 tf_2.txt:- the second 2
 
